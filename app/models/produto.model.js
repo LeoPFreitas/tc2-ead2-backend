@@ -7,7 +7,7 @@ module.exports = mongoose => {
         descricao: String,
         preco: Number
       },
-      { timestamps: true }
+      {timestamps: true}
     )
   );
   return Produto;

@@ -7,7 +7,7 @@ const app = express();
 
 // Seta as configurações do CORS. No caso, especifica que apenas conexões de tal endereço serão aceitas. Ver: // https://expressjs.com/en/resources/middleware/cors.html
 var corsOptions = {
-  origin: "http://localhost:4200"
+  origin: "*"
 };
 
 // Ativa a configuração CORS
@@ -17,11 +17,11 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Parseia também requisições do tipo HTML - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Uma rota, aceitando conexões na raiz e retornando um json simples
 app.get("/", (req, res) => {
-  res.json({ msg: "Está funcionando!" });
+  res.json({msg: "Está funcionando!"});
 });
 
 const db = require("./app/models");
